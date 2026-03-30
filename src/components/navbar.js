@@ -8,7 +8,7 @@ export function createNavbar(appName = '') {
   nav.className = 'navbar glass';
   nav.innerHTML = `
     <div class="navbar-inner">
-      <a href="#/" class="navbar-brand" aria-label="Back to hub">
+      <a href="/" class="navbar-brand" aria-label="Back to hub">
         <div class="navbar-logo">
           <svg width="28" height="28" viewBox="0 0 64 64" fill="none">
             <defs>

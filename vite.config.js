@@ -14,5 +14,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        colorLab: resolve(__dirname, 'color-lab/index.html')
+      }
+    }
   },
 });

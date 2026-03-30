@@ -4,14 +4,26 @@
  */
 
 export function createAppCard(app, index = 0) {
-  const card = document.createElement('article');
+  const isLive = app.status === 'live';
+  
+  // Use anchor tag for native routing and SEO
+  const card = document.createElement(isLive ? 'a' : 'article');
   card.className = 'app-card glass';
   card.style.setProperty('--card-accent', app.color);
   card.style.setProperty('--card-icon-bg', app.iconBg);
   card.style.setProperty('--card-icon-glow', app.iconGlow);
   card.style.animationDelay = `${0.1 + index * 0.08}s`;
 
-  const isLive = app.status === 'live';
+  if (isLive) {
+    if (app.externalUrl) {
+      card.href = app.externalUrl;
+      card.target = '_blank';
+      card.rel = 'noopener noreferrer';
+    } else {
+      // Direct root relative path, matching the Vite HTML output
+      card.href = `/${app.id}/`;
+    }
+  }
 
   card.innerHTML = `
     <div class="app-card-icon">${app.icon}</div>
@@ -46,13 +58,6 @@ export function createAppCard(app, index = 0) {
 
   card.addEventListener('mouseleave', () => {
     card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0)';
-  });
-
-  // Navigate on click
-  card.addEventListener('click', () => {
-    if (isLive) {
-      window.location.hash = `#/${app.id}`;
-    }
   });
 
   if (!isLive) {
