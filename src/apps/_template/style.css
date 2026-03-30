@@ -1,0 +1,46 @@
+/* Scoped styles for this micro-app */
+
+.my-app-container {
+  padding: var(--space-8) 0;
+  animation: fadeInUp 0.6s var(--ease-out-expo) forwards;
+  opacity: 0;
+}
+
+.app-header {
+  margin-bottom: var(--space-8);
+  text-align: center;
+}
+
+.app-header h1 {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--space-2);
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.app-header p {
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+}
+
+.base-btn {
+  background: var(--color-primary);
+  color: #fff;
+  padding: var(--space-2) var(--space-6);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  transition: all var(--duration-fast);
+}
+
+.base-btn:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Utility classes used in JS */
+.p-6 { padding: var(--space-6); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.mt-4 { margin-top: var(--space-4); }

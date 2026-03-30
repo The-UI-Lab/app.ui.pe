@@ -1,0 +1,77 @@
+/* ═══════════════════════════════════════════════════
+   Page Transition Animations
+   ═══════════════════════════════════════════════════ */
+
+/* ── Page Container ─────────────────────────────── */
+.page {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ── Enter Transitions ──────────────────────────── */
+.page-enter {
+  animation: pageEnter 0.5s var(--ease-out-expo) forwards;
+}
+
+.page-exit {
+  animation: pageExit 0.3s var(--ease-out-expo) forwards;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-10px) scale(0.99);
+  }
+}
+
+/* ── Micro-App Page Wrapper ─────────────────────── */
+.micro-app-page {
+  padding-top: 72px; /* Navbar height */
+  min-height: 100vh;
+}
+
+/* ── Stagger Utility ────────────────────────────── */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.15s; }
+.stagger-3 { animation-delay: 0.2s; }
+.stagger-4 { animation-delay: 0.25s; }
+.stagger-5 { animation-delay: 0.3s; }
+.stagger-6 { animation-delay: 0.35s; }
+.stagger-7 { animation-delay: 0.4s; }
+.stagger-8 { animation-delay: 0.45s; }
+
+/* ── Loading Spinner ────────────────────────────── */
+.page-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 255, 255, 0.06);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
