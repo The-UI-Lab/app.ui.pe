@@ -48,12 +48,61 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <script type="module" crossorigin src="/assets/main-DVHDaDyJ.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/transitions-DM5T28o2.js">
-  <link rel="stylesheet" crossorigin href="/assets/transitions-nzA97SH3.css">
-  <link rel="stylesheet" crossorigin href="/assets/main-B7SxJ-GH.css">
+  <script type="module" crossorigin src="/assets/main-DVWKfalV.js"></script>
+  <link rel="modulepreload" crossorigin href="/assets/transitions-wYOwzQnH.js">
+  <link rel="stylesheet" crossorigin href="/assets/transitions-B_Mf6EiD.css">
+  <link rel="stylesheet" crossorigin href="/assets/main-aCCp0tpC.css">
 </head>
 <body>
-  <div id="app"></div>
+  <div id="app">
+    <div class="hub page page-enter">
+      <canvas id="particles" class="particles-canvas"></canvas>
+
+      <main class="hub-hero">
+        <div class="hub-badge">
+          <span class="badge-dot"></span>
+          <span>v1.0 Live</span>
+        </div>
+        <h1 class="hub-title">
+          Explore the <span class="domain">app.ui.pe</span> universe.
+        </h1>
+        <p class="hub-subtitle">
+          A growing constellation of beautiful, focused micro-apps and developer tools. Fast, free, and aesthetically pleasing.
+        </p>
+
+        <div class="hub-search-wrap">
+          <div class="hub-search glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="app-search" placeholder="Search apps by name or category..." autocomplete="off" />
+          </div>
+        </div>
+      </main>
+
+      <section class="hub-section">
+        <div class="container">
+          <header class="hub-section-header">
+            <h2 class="hub-section-title">Available Micro-Apps</h2>
+            <span class="hub-app-count" id="app-count">Loading...</span>
+          </header>
+
+          <div class="apps-grid" id="apps-grid">
+            <!-- Cards injected via JS -->
+          </div>
+
+          <div id="no-results" class="hub-no-results" style="display: none;">
+            <p>No apps found matching your search.</p>
+            <span>Try different keywords like 'css', 'json', or 'tools'.</span>
+          </div>
+        </div>
+      </section>
+
+      <footer class="hub-footer">
+        <p>Built with ❤️ by creators, for developers. <a href="https://github.com" target="_blank">Contribute</a>.</p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
